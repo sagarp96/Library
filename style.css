@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px groove;
+  width: 50vw;
+  margin: auto;
+  height: 10vh;
+  gap: 20px;
+}
+
+.card {
+  border: 2px dotted;
+}

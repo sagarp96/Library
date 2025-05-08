@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="maincontainer">
+      <div class="header">
+        <div style="font-size: larger">Library</div>
+        <button onclick="addNewBook()">Add New Book</button>
+        <button onclick="deleteBook()">Clear Library</button>
+      </div>
+      <div class="container">
+        <div class="card">
+          <div class="Cardheading">
+            <div>Title:</div>
+            <div>Author:</div>
+            <div>Pages:</div>
+            <div>Staus:Read</div>
+          </div>
+          <div class="Cardbody">
+            <div>Add to Library</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="Cardheading">
+            <div>Title:</div>
+            <div>Author:</div>
+            <div>Pages:</div>
+            <div>Staus:Read</div>
+          </div>
+          <div class="Cardbody">
+            <button onclick="deleteBook()">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
