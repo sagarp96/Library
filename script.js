@@ -137,8 +137,22 @@ document
     if (event.target.id && event.target.id.includes("-checkbox")) {
       const bookId = event.target.id.replace("-checkbox", "");
       const isChecked = event.target.checked;
+      const card = document.getElementById(bookId);
+      if (card) {
+        // Remove both classes first
+        card.classList.remove("read", "unread");
+
+        // Add the appropriate class based on checkbox state
+        if (isChecked) {
+          card.classList.add("read");
+        } else {
+          card.classList.add("unread");
+        }
+      }
+
       updateStatus(bookId, isChecked);
     }
+
     if (event.target.classList.contains("delete-btn")) {
       deleteFunction(event.target.id);
     }
