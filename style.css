@@ -10,5 +10,171 @@
 }
 
 .card {
-  border: 2px dotted;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card div {
+  margin: 8px 0;
+  padding: 5px;
+  width: 100%;
+}
+
+.card div:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.card .delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  align-self: center;
+  transition: background-color 0.3s;
+}
+
+.card .delete-btn:hover {
+  background-color: #e60000;
+}
+
+/* Checkbox styling within card */
+.card input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.card label {
+  display: inline-block;
+  font-weight: normal;
+}
+
+/* Read/unread status indicator */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-top-right-radius: 10px;
+}
+
+.card.read::before {
+  background-color: #4caf50;
+}
+
+.card.unread::before {
+  background-color: #ff9800;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  min-height: 80vh;
+  margin: auto;
+  align-items: center;
+  width: 90vw;
+  border: 2px groove;
+  height: 80vh;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.delete-btn {
+  width: 100px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
 }

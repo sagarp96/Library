@@ -4,38 +4,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="maincontainer">
       <div class="header">
-        <div style="font-size: larger">Library</div>
-        <button onclick="addNewBook()">Add New Book</button>
-        <button onclick="deleteBook()">Clear Library</button>
-      </div>
-      <div class="container">
-        <div class="card">
-          <div class="Cardheading">
-            <div>Title:</div>
-            <div>Author:</div>
-            <div>Pages:</div>
-            <div>Staus:Read</div>
-          </div>
-          <div class="Cardbody">
-            <div>Add to Library</div>
+        <div
+          style="
+            font-size: 50px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+          "
+        >
+          Library
+        </div>
+        <button id="openFormBtn">Add New Book</button>
+        <div id="formModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enter Book Information</h2>
+
+            <form id="userForm">
+              <div class="form-group">
+                <label for="bookname">Name:</label>
+                <input
+                  autocomplete="off"
+                  type="text"
+                  id="bookname"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="author">Author:</label>
+                <input
+                  autocomplete="off"
+                  type="text"
+                  id="author"
+                  name="name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="pages">Pages:</label>
+                <input type="number" id="pages" name="age" min="1" required />
+              </div>
+              <div class="form-group">
+                <input
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="myCheckbox"
+                  value="yes"
+                />
+                <label for="myCheckbox">Read?</label>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
-        <div class="card">
-          <div class="Cardheading">
-            <div>Title:</div>
-            <div>Author:</div>
-            <div>Pages:</div>
-            <div>Staus:Read</div>
-          </div>
-          <div class="Cardbody">
-            <button onclick="deleteBook()">Delete</button>
-          </div>
+      </div>
+      <div class="container">
+        <div class="card unread" id="12">
+          <div>Title:The Idiot</div>
+          <div>Author: Fyodor Dostoevsky</div>
+          <div>Pages: 800</div>
+          <input
+            type="checkbox"
+            id="12-checkbox"
+            name="readStatus"
+            class="read-status-checkbox"
+          />
+          <label for="12-checkbox">Read?</label>
+          <button id="12" class="delete-btn">Delete</button>
+        </div>
+        <div class="card read" id="22">
+          <div>Title:Brother Karmazov</div>
+          <div>Author: Fyodor Dostoevsky</div>
+          <div>Pages: 1000</div>
+          <input
+            type="checkbox"
+            id="22-checkbox"
+            name="readStatus"
+            class="read-status-checkbox"
+            checked
+          />
+          <label for="22-checkbox">Read?</label>
+          <button id="22" class="delete-btn">Delete</button>
         </div>
       </div>
     </div>
