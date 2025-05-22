@@ -1,28 +1,27 @@
 const myLibrary = [];
 
-function Book(id, title, author, pages, status) {
-  // the constructor...will only have the properties
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+class Book {
+  constructor(id, title, author, pages, status) {
+    // the constructor...will only have the properties
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
+
+  addBookToLibrary() {
+    const bookdetails = {
+      id: this.id,
+      title: this.title,
+      author: this.author,
+      pages: this.pages,
+      status: this.status,
+    };
+    myLibrary.push(bookdetails);
+    console.log("Current library:", myLibrary);
+  }
 }
-
-Book.prototype.addBookToLibrary = function () {
-  const bookdetails = {
-    id: this.id,
-    title: this.title,
-    author: this.author,
-    pages: this.pages,
-    status: this.status,
-  };
-
-  myLibrary.push(bookdetails);
-  console.log("Current library:", myLibrary);
-};
-// const book1 = new Book("", "idiot", "doestovesy", "100", "yes");
-// book1.addBookToLibrary();
 
 //Getting the elements
 
